@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>conversões</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+
+    <style>
+        table {
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, tr {
+          border-bottom: 2px solid #151010;
+          border-top: 2px solid #151010;
+          height: 100px;
+        }
+
+        td, th {
+          border-left: 2px solid #151010;
+          border-right: 2px solid #151010;
+        }
+    </style>
+
+</head>
+<body>
+    
+
+<script type=text/javascript>
+
+
+//////////////////////////////////////////////////////1 pontinho//////////////////////////////////////////////
+
+function converter_c_em_f(){
+
+
+var c, d, e, res
+
+
+c = parseFloat(document.getElementById("input_c_1").value)
+
+d=1.8
+e=32
+
+res=(c*d+e).toFixed(2);
+
+document.getElementById("resultado_1").value = res
+
+
+if (c < 0) {
+    document.body.style.background = "blue";
+} else if (c > 30) {
+    document.body.style.background = "red";
+} else {
+    document.body.style.background = "yellow";
+}
+
+}
+
+//////////////////////////////////////////////////////2 pontinho//////////////////////////////////////////////
+
+function converter_f_em_c(){
+
+
+var f, d, e, res
+
+
+f = prompt("Please enter a number", "")
+if (x = null) {
+    document.getElementById("input_f_1").innerHTML = f;
+    }
+
+d=1.8
+e=32
+
+res=((f-e)/d).toFixed(2);
+
+document.getElementById("resultado_2").value = res
+
+
+if (res < 0) {
+    document.body.style.background = "blue";
+} else if (res > 30) {
+    document.body.style.background = "red";
+} else {
+    document.body.style.background = "yellow";
+}
+
+}
+
+
+//////////////////////////////////////////////////////3 pontinho//////////////////////////////////////////////
+
+function converter_c_em_k(){
+
+
+var c, d, res
+
+
+c = parseFloat(document.getElementById("input_c_2").value)
+
+d=273.15
+
+
+res=(c+d).toFixed(2);
+
+document.getElementById("resultado_3").value = res
+
+if (c < 0) {
+    document.body.style.background = "blue";
+} else if (c > 30) {
+    document.body.style.background = "red";
+} else {
+    document.body.style.background = "yellow";
+}
+
+}
+
+//////////////////////////////////////////////////////4 pontinho//////////////////////////////////////////////
+
+function converter_k_em_c(){
+
+
+var k, d, res
+
+
+k = parseFloat(document.getElementById("input_k_1").value)
+
+d=273.15
+
+res=(k-d).toFixed(2);
+
+document.getElementById("resultado_4").value = res
+
+if (res < 0) {
+    document.body.style.background = "blue";
+} else if (res > 30) {
+    document.body.style.background = "red";
+} else {
+    document.body.style.background = "yellow";
+}
+
+}
+
+//////////////////////////////////////////////////////5 pontinho//////////////////////////////////////////////
+
+function converter_f_em_k(){
+
+
+var f, d, e, g, h, i, res
+
+
+f = parseFloat(document.getElementById("input_f_2").value)
+
+d=273.15
+e=1.8
+g=32
+h=f-g
+i=h/e
+
+res=(i+d).toFixed(2);
+
+window.alert(res)
+
+if (f < 32) {
+    document.body.style.background = "blue";
+} else if (f > 86) {
+    document.body.style.background = "red";
+} else {
+    document.body.style.background = "yellow";
+}
+
+}
+
+
+//////////////////////////////////////////////////////6 pontinho//////////////////////////////////////////////
+
+function converter_k_em_f(){
+
+
+var k, d, e, g, h, i, res
+
+
+k = parseFloat(document.getElementById("input_k_2").value)
+
+d=273.15
+e=1.8
+g=32
+h=k-d
+i=h*e
+
+res=(i+g).toFixed(2);
+
+document.write(res)
+
+if (res < 32) {
+    document.body.style.background = "blue";
+} else if (res > 86) {
+    document.body.style.background = "red";
+} else {
+    document.body.style.background = "yellow";
+}
+
+}
+
+
+</script>
+
+
+<table>
+<center>
+
+<!-- //////////////////////////////////////////////////////1 pontinho//////////////////////////////////////////////-->
+
+<tr>
+<th>
+
+<form name="Conversor de Celsius em Fahrenheit">
+
+<label for="input">Temperatura em Celsius</label>
+<input type="number" id="input_c_1" oninput="converter_c_em_f()" min="273,15">
+
+</th>
+<th>
+
+<label for="output">Temperatura em Fahrenheit</label>
+<input type="number" id="resultado_1" readonly>
+
+
+</form>
+</th>
+</tr>
+    
+<!--//////////////////////////////////////////////////////2 pontinho//////////////////////////////////////////////-->
+
+<tr>
+<th>
+
+<form name="Conversor de Fahrenheit em Celsius">
+
+<button type="button" onclick="converter_f_em_c()">inserir a temperetura em Fahrenheit</button>
+
+</th>
+<th>
+
+<label for="output">Temperatura em Celsius</label>
+<input type="number" id="resultado_2" readonly>
+    
+</form>
+</th>
+</tr>
+
+<!--//////////////////////////////////////////////////////3 pontinho//////////////////////////////////////////////-->
+
+<tr>
+<th>
+
+<form name="Conversor de Celsius em Kelvin">
+
+<label for="input">Temperatura em Celsius</label>
+<input type="number" id="input_c_2" min="-273.15">
+<button type="button" ondblclick="converter_c_em_k()">Converter</button>
+
+</th>    
+<th>
+
+<label for="output">Temperatura em Kelvin</label>
+<input type="number" id="resultado_3" readonly>
+    
+</form>
+</th>    
+</tr>
+    
+<!--//////////////////////////////////////////////////////4 pontinho//////////////////////////////////////////////-->
+
+<tr>
+<th>
+
+<form name="Conversor de Kelvin em Celsius">
+
+<label for="input">Temperatura em Kelvin</label>
+<input type="number" id="input_k_1" min="0">
+<button type="button" onmousemove="converter_k_em_c()">Converter</button>
+
+</th>
+<th>
+
+<label for="output">Temperatura em Celsius</label>
+<input type="number" id="resultado_4" readonly>
+    
+</form>
+</th>
+</tr>
+
+<!--//////////////////////////////////////////////////////5 pontinho//////////////////////////////////////////////-->
+
+<tr>
+<th>
+
+<form name="Conversor de Fahrenheit em Kelvin">
+
+<label for="input">Temperatura em Fahrenheit</label>
+<input type="number" id="input_f_2" min="-459.67">
+
+</th>
+<th>
+
+<button type="button" oncontextmenu="converter_f_em_k()">Converter em Kelvin</button>
+
+</form>
+</th>
+</tr>
+    
+<!--//////////////////////////////////////////////////////6 pontinho//////////////////////////////////////////////-->
+
+<tr>
+<th>
+
+<form name="Conversor de Kelvin em Fahrenheit">
+
+<label for="input">Temperatura em Kelvin</label>
+<input type="number" id="input_k_2" min="0">
+    
+</th>
+<th>
+
+<button type="button" onmousedown="converter_k_em_f()">Converter em Fahrenheit</button>
+
+</form>
+</th>
+</tr>
+
+</center>
+</table>
+
+<a href="https://www.metric-conversions.org/pt/">fonte credível e legitima para as fórmulas das conversões</a>
+
+</body>
+</html>
